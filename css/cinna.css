@@ -6,11 +6,28 @@ body {
     padding: 0;
 }
 
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 160' xmlns='http://www.w3.org/2000/svg'><path fill='%23A3D0F7' d='M0,40 Q60,80 120,40 Q180,0 240,40 Q300,80 360,40 Q420,0 480,40 Q540,80 600,40 Q660,0 720,40 Q780,80 840,40 Q900,0 960,40 Q1020,80 1080,40 Q1140,0 1200,40 Q1260,80 1320,40 Q1380,0 1440,40 L1440,160 L0,160 Z' /></svg>") no-repeat bottom;
+    background-size: cover;
+    z-index: 1;
+}
+
 header {
-    background-color: #A3D0F7; /* Azul más intenso */
+    background-image: url('../img/gifsanrio.gif');
+    background-size: cover;
+    background-position: center;
     color: #fff; /* Texto blanco */
-    padding: 20px;
+    padding: 150px;
     text-align: center;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
 }
 
 header h1 {

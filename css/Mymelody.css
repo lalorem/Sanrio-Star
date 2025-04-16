@@ -1,22 +1,50 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #F7E0F0; 
+    background-color: #FCD3E1; 
     color: #333; /* Texto oscuro para contraste */
     margin: 0;
     padding: 0;
 }
-header {
-    background-color: #F8A8C9; /* Rosa más intenso */
-    color: #fff; /* Texto blanco */
-    padding: 20px;
-    text-align: center;
+
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 160' xmlns='http://www.w3.org/2000/svg'><path fill='%23FCD3E1' d='M0,40 Q60,80 120,40 Q180,0 240,40 Q300,80 360,40 Q420,0 480,40 Q540,80 600,40 Q660,0 720,40 Q780,80 840,40 Q900,0 960,40 Q1020,80 1080,40 Q1140,0 1200,40 Q1260,80 1320,40 Q1380,0 1440,40 L1440,160 L0,160 Z' /></svg>") no-repeat bottom;
+    background-size: cover;
+    z-index: 1;
 }
-header h1 {
+
+header {
+    background-image: url('../img/melodypeg.jpg'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Texto blanco */
+    padding: 200px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Importante para que la onda no sobresalga */
+    z-index: 0;
+}
+
+h1 {
+    text-align: center;
     margin: 0;
     font-size: 2.5em;
+    color: #F48FB1;
 }
+
+.tex {
+    text-align: center;
+    margin: 0;
+    font-size: 1em;
+    color: #F48FB1;
+}
+
 nav {
-    background-color: #F9C4D8; /* Rosa claro */
+    background-color: #F7E0F0; /* Rosa claro */
     padding: 10px;
     text-align: center;
 }
@@ -55,52 +83,132 @@ nav a:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
   }
 
-.container {
+/*seccion de los productos*/
+
+  .product-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: #F9B5C9; /* rosa pastel más fuerte */
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(239, 120, 161, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
-.product {
-    background-color: #fff; /* Fondo blanco */
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    width: 300px;
-    text-align: center;
-    overflow: hidden;
+
+.product-card:hover {
+    transform: translateY(-10px);
 }
-.product img {
+
+.product-card img {
     width: 100%;
-    height: auto;
-    border-bottom: 2px solid #F8A8C9; /* Rosa intenso para el borde de la imagen */
-}
-.product h3 {
-    font-size: 1.5em;
-    margin: 15px 0;
-    color: #F8A8C9; /* Rosa intenso */
-}
-.product p {
-    font-size: 1.1em;
-    color: #F9C4D8; /* Rosa claro */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
     margin-bottom: 15px;
+    border: 3px solid #E06794; /* rosa fuerte */
 }
+
+.product-card h3 {
+    font-size: 1.4em;
+    color: #D94F82; /* rosa oscuro más intenso */
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1em;
+    color: #B2466D; /* rosa más profundo y sobrio */
+    margin: 10px 0;
+}
+
 .price {
-    font-size: 1.3em;
-    color: #F8A8C9; /* Rosa intenso para el precio */
-    margin-bottom: 20px;
-}
-.button {
-    background-color: #F8A8C9; /* Rosa intenso */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 1.2em;
+    color: #E3749E; /* rosa más fuerte para destacar el precio */
+    font-weight: bold;
+    margin: 10px 0;
 }
+
+.pretty-button {
+    background: linear-gradient(135deg, #E06794, #F9B5C9); /* tonos más intensos */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(224, 103, 148, 0.3);
+}
+
+.pretty-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #F18DAA, #FCD3E1);
+    color: #732D48; /* contraste con tono ciruela oscuro */
+}
+
 .button:hover {
-    background-color: #F7E0F0; /* Rosa suave en hover */
+    background-color: #D94F82;
+}
+
+.back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.back-btn a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #732D48; /* rosa vino para contraste */
+    border: 2px solid #F9B5C9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.back-btn a:hover {
+    background-color: #F9B5C9;
+    color: #732D48;
+}
+
+
+.back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.back-btn a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #A05266; /* rosado-café suave */
+    border: 2px solid #FADADD; /* rosa claro */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.back-btn a:hover {
+    background-color: #FADADD; /* fondo más claro */
+    color: #A05266; /* texto contrastante */
 }
 
 .back-btn {

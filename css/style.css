@@ -439,4 +439,64 @@ body {
   transform: scale(1.05);
 }
 
+/*intento*/
+.destacados {
+  padding: 50px 20px;
+  background-color: #000; /* fondo negro */
+  text-align: center;
+  color: #fff; /* texto blanco */
+}
+
+.tarjetas-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.tarjeta {
+  background: #141414; /* gris para las tarjetas */
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* sombra suave */
+  padding: 15px;
+  width: 200px;
+  transition: transform 0.3s;
+  color: #7a7a7a; /* texto en negro para mejor contraste */
+}
+
+.tarjeta:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta img {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid #c294d3; /* borde morado pastel */
+}
+
+.tarjeta h3 {
+  margin: 10px 0 5px;
+  font-size: 1.1rem;
+  color: #8C4D9B; /* texto oscuro */
+}
+
+.tarjeta .btn {
+  background: linear-gradient(135deg, #8C4D9B, #D1B2FF);
+  color: #fff; /* texto blanco */
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #c294d3; /* sombra suave morada */
+}
+/*fin de intento*/
+
+/* intento 2 */
+
+
+
+/*fin */
 

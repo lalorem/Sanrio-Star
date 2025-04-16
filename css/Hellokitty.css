@@ -1,20 +1,49 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #FAD4D4; /* Rosa pastel suave */
+    background-color: #ca4758; /* Rosa pastel suave */
     color: #333; /* Texto oscuro para contraste */
     margin: 0;
     padding: 0;
 }
-header {
-    background-color: #AD182C; /* Rojo intenso */
-    color: #fff; /* Texto blanco */
-    padding: 20px;
-    text-align: center;
+
+.wave-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 160' xmlns='http://www.w3.org/2000/svg'><path fill='%23ca4758' d='M0,40 Q60,80 120,40 Q180,0 240,40 Q300,80 360,40 Q420,0 480,40 Q540,80 600,40 Q660,0 720,40 Q780,80 840,40 Q900,0 960,40 Q1020,80 1080,40 Q1140,0 1200,40 Q1260,80 1320,40 Q1380,0 1440,40 L1440,160 L0,160 Z' /></svg>") no-repeat bottom;
+    background-size: cover;
+    z-index: 1;
 }
-header h1 {
+
+header {
+    background-image: url('../img/hellokittypag.jpg'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Texto blanco */
+    padding: 200px;
+    text-align: center;
+
+    position: relative;
+    overflow: hidden; /* Importante para que la onda no sobresalga */
+    z-index: 0;
+}
+
+h1 {
+    text-align: center;
     margin: 0;
     font-size: 2.5em;
+    color: #ffff; /* Rojo intenso */
 }
+
+.tex{
+    text-align: center;
+    margin: 0;
+    font-size: 1em;
+    color: #ffff; /* Rojo intenso */
+}
+
 nav {
     background-color: #E8768D; /* Rosa claro */
     padding: 10px;
@@ -55,53 +84,86 @@ nav a:hover {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
   }
 
-.container {
+  /*productos*/
+
+  .product-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: #4D0011; /* Rojo vino oscuro */
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    transition: transform 0.3s ease;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
-.product {
-    background-color: #fff; /* Fondo blanco */
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    width: 300px;
-    text-align: center;
-    overflow: hidden;
+
+.product-card:hover {
+    transform: translateY(-10px);
 }
-.product img {
+
+.product-card img {
     width: 100%;
-    height: auto;
-    border-bottom: 2px solid #AD182C; /* Rojo intenso para el borde de la imagen */
-}
-.product h3 {
-    font-size: 1.5em;
-    margin: 15px 0;
-    color: #AD182C; /* Rojo intenso */
-}
-.product p {
-    font-size: 1.1em;
-    color: #E8768D; /* Rosa claro */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
     margin-bottom: 15px;
 }
+
+.product-card h3 {
+    font-size: 1.4em;
+    color: #FF4D88; /* Rosa fuerte */
+    margin: 10px 0;
+}
+
+.product-card p {
+    font-size: 1em;
+    color: #FFD6E7; /* Rosa pálido para contraste */
+    margin: 10px 0;
+}
+
 .price {
-    font-size: 1.3em;
-    color: #AD182C; /* Rojo intenso para el precio */
-    margin-bottom: 20px;
-}
-.button {
-    background-color: #AD182C; /* Rojo intenso */
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
     font-size: 1.2em;
+    color: #FF6B81; /* Rosa intenso para el precio */
+    font-weight: bold;
+    margin: 10px 0;
 }
+
+.pretty-button {
+    background: linear-gradient(135deg, #FF4D4D, #FF6699); /* Rojo y rosa fuerte */
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 77, 136, 0.4);
+}
+
+.pretty-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #E60039, #FF4D88); /* Rojo intenso a rosa fuerte */
+    color: #fff;
+}
+
 .button:hover {
-    background-color: #FAD4D4; /* Rosa pastel suave en hover */
+    background-color: #FF3366; /* Rosa fuerte al pasar el cursor */
 }
+
 
 .back-btn {
     position: absolute;

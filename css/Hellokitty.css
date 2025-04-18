@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive, sans-serif;
     background-color: #ca4758; /* Rosa pastel suave */
     color: #333; /* Texto oscuro para contraste */
     margin: 0;
@@ -18,11 +18,11 @@ body {
 }
 
 header {
-    background-image: url('../img/hellokittypag.jpg'); /* Imagen de fondo */
+    background-image: url('../img/gifhello.webp'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: #fff; /* Texto blanco */
-    padding: 200px;
+    padding: 270px;
     text-align: center;
 
     position: relative;
@@ -32,17 +32,21 @@ header {
 
 h1 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 50px 0; /* Agrega espacio debajo del título */
     font-size: 2.5em;
-    color: #ffff; /* Rojo intenso */
+    color: #fff; /* Texto blanco */
 }
 
-.tex{
+.tex {
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1em;
-    color: #ffff; /* Rojo intenso */
+    color: #fff; /* Texto blanco */
+    max-width: 650px;
+    line-height: 1.5;
+    padding: 0 1em;
 }
+
 
 nav {
     background-color: #E8768D; /* Rosa claro */

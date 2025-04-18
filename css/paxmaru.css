@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive, sans-serif;
     background-color: #1D3557; 
     color: #F1F1F1; 
     margin: 0;
@@ -18,11 +18,11 @@ body {
 }
 
 header {
-    background-image: url('../img/maruuuu.jpg');
+    background-image: url('../img/gifBadtz-Maru.gif');
     background-size: cover;
     background-position: center;
     color: #F1F1F1; 
-    padding: 200px;
+    padding: 270px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -31,16 +31,19 @@ header {
 
 h1 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 50px 0; /* Agrega espacio debajo del título */
     font-size: 2.5em;
     color: #000;
 }
 
 .tex {
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1em;
     color: #000;
+    max-width: 650px;
+    line-height: 1.5;
+    padding: 0 1em;
 }
 
 nav {
@@ -185,7 +188,7 @@ nav a:hover {
 }
 
 footer {
-    background-color: #1D3557;
+    background-color: #132641;
     color: #F1F1F1;
     padding: 20px;
     text-align: center;

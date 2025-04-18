@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #D1E8F3; /* Azul claro */
+    font-family: cursive, sans-serif;
+    background-color: #94bbce;
     color: #333; /* Texto oscuro para contraste */
     margin: 0;
     padding: 0;
@@ -12,17 +12,17 @@ body {
     left: 0;
     width: 100%;
     height: 160px;
-    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 160' xmlns='http://www.w3.org/2000/svg'><path fill='%23D1E8F3' d='M0,40 Q60,80 120,40 Q180,0 240,40 Q300,80 360,40 Q420,0 480,40 Q540,80 600,40 Q660,0 720,40 Q780,80 840,40 Q900,0 960,40 Q1020,80 1080,40 Q1140,0 1200,40 Q1260,80 1320,40 Q1380,0 1440,40 L1440,160 L0,160 Z' /></svg>") no-repeat bottom;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 160' xmlns='http://www.w3.org/2000/svg'><path fill='%2394bbce' d='M0,40 Q60,80 120,40 Q180,0 240,40 Q300,80 360,40 Q420,0 480,40 Q540,80 600,40 Q660,0 720,40 Q780,80 840,40 Q900,0 960,40 Q1020,80 1080,40 Q1140,0 1200,40 Q1260,80 1320,40 Q1380,0 1440,40 L1440,160 L0,160 Z' /></svg>") no-repeat bottom;
     background-size: cover;
     z-index: 1;
 }
 
 header {
-    background-image: url('../img/cinnapag.jpg');
+    background-image: url('../img/gifcinamonroll.gif');
     background-size: cover;
     background-position: center;
     color: #fff; /* Texto blanco */
-    padding: 200px;
+    padding: 270px;
     text-align: center;
 
     position: relative;
@@ -32,16 +32,19 @@ header {
 
 h1 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 50px 0; /* Agrega espacio debajo del título */
     font-size: 2.5em;
-    color: #A9D1F3;
+    color: #50708d;
 }
 
 .tex{
     text-align: center;
-    margin: 0;
-    font-size: 1.2em;
-    color: #A3D0F7; /* Azul más intenso */
+    margin: 0 auto;
+    font-size: 1em;
+    max-width: 650px;
+    line-height: 1.5;
+    padding: 0 1em;
+    color: #50708d; 
 }
 
 nav {
@@ -103,7 +106,7 @@ nav a:hover {
 }
 
 .product-card {
-    background-color: #F1F7FF; /* Azul pastel suave */
+    background-color: #cad8eb; /* Azul pastel suave */
     border-radius: 25px;
     box-shadow: 0 10px 20px rgba(0, 0, 255, 0.1); /* Sombra azul suave */
     overflow: hidden;
@@ -134,13 +137,13 @@ nav a:hover {
 
 .product-card p {
     font-size: 1em;
-    color: #B7C7D4; /* Azul más suave */
+    color: #5d7080; /* Azul más suave */
     margin: 10px 0;
 }
 
 .price {
     font-size: 1.2em;
-    color: #F5A8D1; /* Rosado pastel */
+    color: #db7daf; /* Rosado pastel */
     font-weight: bold;
     margin: 10px 0;
 }
@@ -191,8 +194,8 @@ nav a:hover {
 }
 
 footer {
-    background-color: #A3D0F7; /* Azul más intenso */
-    color: #fff; /* Texto blanco */
+    background-color: #abc7df; /* Azul más intenso */
+    color: #50708d; /* Texto blanco */
     padding: 20px;
     text-align: center;
 }

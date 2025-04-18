@@ -11,20 +11,28 @@
     
     <header class="header">
       <a href="index.html" class="circular-button">
-        <img src="img/logo.PNG" alt="Botón circular">
-    </a>
+        <img src="img/logo.PNG" alt="Logo">
+      </a>
       <form class="search-bar" action="#" method="GET">
         <input type="text" name="q" placeholder="Buscar productos..." />
-  <button type="submit">🔍</button>
-      </nav> 
+        <button type="submit">🔍</button>
+      </form>
       <div class="actions">
         <a href="carrito.html" class="cart-button">
-            <i class="shopping cart icon"></i> Carrito 🛒</a>
-            <a href="productos.html" class="cart-button">Productos</a>
-      <div class="login">
-        <a href="inicosesion.html" class="btn">Iniciar sesión</a>
-      </div> </form>
+          <i class="shopping cart icon"></i> Carrito 🛒
+        </a>
+        <a href="productos.html" class="cart-button">Productos</a>
+        <div class="login">
+          <a href="iniciosesion.html" class="btn">Iniciar sesión</a>
+        </div>
+      </div>
     </header>
+    
+
+    <!-- intento2 -->
+
+
+<!--  fin -->
 
     <section class="lol"></section>
   
@@ -55,6 +63,9 @@
           <a href="keroppi.html"><img src="img/iconKeroppi.jfif" alt="Imagen 8"></a>
         </div>
         <div class="item">
+          <a href="chococat.html"><img src="img/iconcat.jpg" alt="Imagen 9"></a>
+        </div>
+        <div class="item">
           <a href="Hellokitty.html"><img src="img/iconHello.jfif" alt="Imagen 1"></a>
         </div>
         <div class="item">
@@ -77,6 +88,9 @@
         </div>
         <div class="item">
           <a href="keroppi.html"><img src="img/iconKeroppi.jfif" alt="Imagen 8"></a>
+        </div>
+        <div class="item">
+          <a href="chococat.html"><img src="img/iconcat.jpg" alt="Imagen 9"></a>
         </div>
         </div>
         <div class="contenedor">
@@ -105,6 +119,9 @@
             <a href="keroppi.html"><img src="img/iconKeroppi.jfif" alt="Imagen 8"></a>
           </div>
           <div class="item">
+            <a href="chococat.html"><img src="img/iconcat.jpg" alt="Imagen 9"></a>
+          </div>
+          <div class="item">
             <a href="Hellokitty.html"><img src="img/iconHello.jfif" alt="Imagen 1"></a>
           </div>
           <div class="item">
@@ -128,13 +145,15 @@
           <div class="item">
             <a href="keroppi.html"><img src="img/iconKeroppi.jfif" alt="Imagen 8"></a>
           </div>
+          <div class="item">
+            <a href="chococat.html"><img src="img/iconcat.jpg" alt="Imagen 9"></a>
+          </div>
       </div>
     </div>
 <pre></pre><pre></pre>
 
 
 <!--  intento -->
-
 <section class="destacados">
   <h2>✨ Productos Destacados ✨</h2>
   <div class="tarjetas-productos">
@@ -166,11 +185,6 @@
 </section>
 <!--  fin de intento-->
 
-<!-- intento2 -->
-
-
-
-<!--  fin -->
 
     <div class="footer-container">
       <img src="img/fondo_footer.jpg" alt="Fondo de footer" class="footer-background" />
@@ -209,23 +223,19 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const carrusel = document.querySelector(".carrusel .contenedor");
-
     let animationRunning = true;
-
     function pauseAnimation() {
         if (animationRunning) {
             carrusel.style.animationPlayState = "paused";
             animationRunning = false;
         }
     }
-
     function resumeAnimation() {
         if (!animationRunning) {
             carrusel.style.animationPlayState = "running";
             animationRunning = true;
         }
     }
-
     carrusel.addEventListener("mouseenter", pauseAnimation);
     carrusel.addEventListener("mouseleave", resumeAnimation);
 });

@@ -23,14 +23,14 @@
         </div>
       </div>
     </header>
-    
+
     <section id="carrito" class="carrito">
       <h2>Tu carrito de compras</h2>
     
       <div id="cart-items" class="cart-items">
       </div>
     </section>
-    
+
     <script>
       function displayCart() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -117,26 +117,20 @@
 }
 
 
-      function updateQuantity(index, newQuantity) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart[index].quantity = parseInt(newQuantity);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        displayCart(); 
-      }
-    
-      function toggleSummary(index) {
-        const summary = document.getElementById(`summary-${index}`);
-        const button = document.querySelectorAll('.btn-summary')[index];
-    
-        if (summary.style.display === 'none') {
-          summary.style.display = 'block';
-          button.innerText = 'Ocultar Resumen';
-        } else {
-          summary.style.display = 'none';
-          button.innerText = 'Mostrar Resumen';
-        }
-        
-      }
+function updateQuantity(index, newQuantity) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Se asegura de que la cantidad no sea menor que 1
+  if (newQuantity < 1) {
+    newQuantity = 1;
+  }
+
+  cart[index].quantity = parseInt(newQuantity);
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  displayCart(); // Asegúrate de que se vuelva a renderizar el carrito
+}
+
 
       window.onload = displayCart;
     </script>

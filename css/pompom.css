@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive, sans-serif;
     background-color: #F9E4B7; 
     color: #5B3C1D; 
     margin: 0;
@@ -18,11 +18,11 @@ body {
 }
 
 header {
-    background-image: url('../img/pompum.jpg'); /* Imagen de fondo */
+    background-image: url('../img/gifpompompurin.gif'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: #5B3C1D;
-    padding: 200px;
+    padding: 270px;
     text-align: center;
 
     position: relative;
@@ -32,16 +32,19 @@ header {
 
 h1 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 50px 0; /* Agrega espacio debajo del título */
     font-size: 2.5em;
-    color: #000;
+    color: #5B3C1D;
 }
 
-.tex{
+.tex {
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1em;
     color: #5B3C1D;
+    max-width: 650px;
+    line-height: 1.5;
+    padding: 0 1em;
 }
 
 nav {

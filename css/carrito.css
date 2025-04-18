@@ -1,6 +1,6 @@
 /* Estilos generales */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: cursive, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #000000;
@@ -498,3 +498,6 @@ h2 {
 .cart-actions .checkout:hover {
   background-color: #45a049;
 }
+
+
+

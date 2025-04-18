@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive, sans-serif;
     background-color: #FCD3E1; 
     color: #333; /* Texto oscuro para contraste */
     margin: 0;
@@ -18,11 +18,11 @@ body {
 }
 
 header {
-    background-image: url('../img/melodypeg.jpg'); /* Imagen de fondo */
+    background-image: url('../img/gifmymelody.gif'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: #fff; /* Texto blanco */
-    padding: 200px;
+    padding: 270px;
     text-align: center;
     position: relative;
     overflow: hidden; /* Importante para que la onda no sobresalga */
@@ -31,16 +31,19 @@ header {
 
 h1 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 50px 0; /* Agrega espacio debajo del título */
     font-size: 2.5em;
-    color: #F48FB1;
+    color: #d45288;
 }
 
 .tex {
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1em;
-    color: #F48FB1;
+    max-width: 650px;
+    line-height: 1.5;
+    padding: 0 1em;
+    color: #d45288;
 }
 
 nav {

@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive, sans-serif;
     background-color: #E8F4FD; 
     color: #3A3A3A; 
     margin: 0;
@@ -19,11 +19,11 @@ body {
 }
 
 header {
-    background-image: url('../img/pochacoo.jpg'); /* Imagen de fondo */
+    background-image: url('../img/gifpochaco.gif'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: #FFFFFF; 
-    padding: 200px;
+    padding: 270px;
     text-align: center;
     position: relative;
     overflow: hidden; /* Importante para que la onda no sobresalga */
@@ -31,17 +31,20 @@ header {
 }
 
 h1 {
-    text-align: center;    
-    margin: 0;
+    text-align: center;
+    margin: 0 0 50px 0; /* Agrega espacio debajo del título */
     font-size: 2.5em;
-    color: black;
+    color: #000;
 }
 
-.tex{
+.tex {
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1em;
-    color: #000; 
+    color: #000;
+    max-width: 650px;
+    line-height: 1.5;
+    padding: 0 1em;
 }
 
 nav {

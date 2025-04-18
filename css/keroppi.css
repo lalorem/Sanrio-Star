@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #D6F5D6; /* Verde claro pastel */
+    font-family: cursive, sans-serif;
+    background-color: #b0ebb0; /* Verde claro pastel */
     color: #2E6B2F; /* Verde oscuro para el texto */
     margin: 0;
     padding: 0;
@@ -12,17 +12,17 @@ body {
     left: 0;
     width: 100%;
     height: 160px;
-    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 160' xmlns='http://www.w3.org/2000/svg'><path fill='%23D6F5D6' d='M0,40 Q60,80 120,40 Q180,0 240,40 Q300,80 360,40 Q420,0 480,40 Q540,80 600,40 Q660,0 720,40 Q780,80 840,40 Q900,0 960,40 Q1020,80 1080,40 Q1140,0 1200,40 Q1260,80 1320,40 Q1380,0 1440,40 L1440,160 L0,160 Z' /></svg>") no-repeat bottom;
+    background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 160' xmlns='http://www.w3.org/2000/svg'><path fill='%23b0ebb0' d='M0,40 Q60,80 120,40 Q180,0 240,40 Q300,80 360,40 Q420,0 480,40 Q540,80 600,40 Q660,0 720,40 Q780,80 840,40 Q900,0 960,40 Q1020,80 1080,40 Q1140,0 1200,40 Q1260,80 1320,40 Q1380,0 1440,40 L1440,160 L0,160 Z' /></svg>") no-repeat bottom;
     background-size: cover;
     z-index: 1;
 }
 
 header {
-    background-image: url('../img/keropiii.jpg'); /* Imagen de fondo */
+    background-image: url('../img/gifkeroppi.gif'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: #FFFFFF; /* Blanco para el texto */
-    padding: 200px;
+    padding: 270px;
     text-align: center;
 
     position: relative;
@@ -32,16 +32,19 @@ header {
 
 h1 {
     text-align: center;
-    margin: 0;
+    margin: 0 0 50px 0; /* Agrega espacio debajo del título */
     font-size: 2.5em;
-    color: #2E6B2F; /* Verde oscuro */
+    color: #2E6B2F;
 }
 
-.tex{
+.tex {
     text-align: center;
-    margin: 0;
+    margin: 0 auto;
     font-size: 1em;
-    color: #2E6B2F; /* Verde oscuro */
+    color: #2E6B2F;
+    max-width: 650px;
+    line-height: 1.5;
+    padding: 0 1em;
 }
 
 nav {
@@ -214,7 +217,7 @@ nav a:hover {
 }
 
 footer {
-    background-color: #76C443; /* Verde más intenso */
+    background-color: #2E6B2F; /* Verde más intenso */
     color: #FFFFFF; /* Blanco */
     padding: 20px;
     text-align: center;

@@ -7,10 +7,11 @@
     <title>Sanrio Star ✩</title>
     <link rel="stylesheet" href="css/carrito.css" />
   </head>
+
   <body>
     <header class="header">
       <a href="index.html" class="circular-button">
-        <img src="img/j.webp" alt="Botón circular"></a>
+        <img src="img/logo.PNG" alt="Botón circular"></a>
       <form class="search-bar" action="#" method="GET">
         <input type="text" name="q" placeholder="Buscar productos..." />
         <button type="submit">🔍</button>
@@ -26,22 +27,47 @@
 
     <section id="carrito" class="carrito">
       <h2>Tu carrito de compras</h2>
-    
-      <div id="cart-items" class="cart-items">
-      </div>
+      <div id="cart-items" class="cart-items"></div>
+
+      <aside class="carrito-aside">
+        <h3>Resumen</h3>
+        <p id="resumen-subtotal"></p>
+        <p id="resumen-taxes"></p>
+        <p id="resumen-shipping"></p>
+        <p id="resumen-total"></p>
+        <button class="btn-comprar" disabled>Comprar ahora</button>
+        <button class="btn-vaciar" disabled>Vaciar Carrito</button>
+
+      </aside>
     </section>
+
+    <footer id="contacto" class="footer">
+      <h3>Contacto</h3>
+      <p>Email: contacto@sanriostar.com</p>
+      <p>Teléfono: +123 456 789</p>
+      <p>© 2024 Sanrio Star</p>
+  </footer>
 
     <script>
       function displayCart() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartItems = document.getElementById('cart-items');
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItems = document.getElementById('cart-items');
 
-  cartItems.innerHTML = '';
-  let subtotal = 0;
+        // Guardar el estado actual de los checkboxes
+  const currentCheckboxStates = {};
+  document.querySelectorAll('.product-checkbox').forEach(checkbox => {
+    currentCheckboxStates[checkbox.dataset.index] = checkbox.checked;
+  });
+        cartItems.innerHTML = '';
 
-  cart.forEach((product, index) => {
-    const cartItem = `
+        cart.forEach((product, index) => {
+    const isChecked = currentCheckboxStates.hasOwnProperty(index)
+      ? currentCheckboxStates[index]
+      : true;
+
+      const cartItem = `
       <div class="cart-item">
+        <input type="checkbox" class="product-checkbox" data-index="${index}" ${isChecked ? 'checked' : ''} />
         <img src="${product.image}" alt="${product.title}" class="cart-item-img">
         <div class="cart-item-details">
           <h4>${product.title}</h4>
@@ -51,88 +77,97 @@
           <p>Subtotal: $${(product.price * product.quantity).toLocaleString()}</p>
           <div class="cart-item-actions">
             <button class="btn-remove" data-index="${index}">Eliminar</button>
-            <button class="btn-summary" data-index="${index}" onclick="toggleSummary(${index})">Mostrar Resumen</button>
-          </div>
-
-          <div class="product-summary" id="summary-${index}" style="display: none;">
-            <p id="subtotal-${index}"></p>
-            <p id="taxes-${index}"></p>
-            <p id="shipping-${index}"></p>
-            <p id="grand-total-${index}"></p>
           </div>
         </div>
       </div>
     `;
     cartItems.innerHTML += cartItem;
-    subtotal += product.price * product.quantity;
   });
 
-  const removeButtons = document.querySelectorAll('.btn-remove');
-  removeButtons.forEach(button => {
-    button.addEventListener('click', removeProduct);
-  });
-    
-        cart.forEach((product, index) => {
-          const subtotalElement = document.getElementById(`subtotal-${index}`);
-          const taxesElement = document.getElementById(`taxes-${index}`);
-          const shippingElement = document.getElementById(`shipping-${index}`);
-          const grandTotalElement = document.getElementById(`grand-total-${index}`);
-    
-          const taxes = product.price * product.quantity * 0.10; 
-          const shipping = product.price * product.quantity > 100000 ? 0 : 10000; 
-          const grandTotal = (product.price * product.quantity) + taxes + shipping;
-    
-          subtotalElement.innerText = `Subtotal: $${(product.price * product.quantity).toLocaleString()}`;
-          taxesElement.innerText = `Impuestos (10%): $${taxes.toLocaleString()}`;
-          shippingElement.innerText = `Envío: $${shipping.toLocaleString()}`;
-          grandTotalElement.innerText = `Total: $${grandTotal.toLocaleString()}`;
+        // Botones de eliminar
+        document.querySelectorAll('.btn-remove').forEach(button => {
+          button.addEventListener('click', removeProduct);
         });
+
+        // Escuchar cambios en los checkboxes
+        document.querySelectorAll('.product-checkbox').forEach(checkbox => {
+          checkbox.addEventListener('change', calcularResumen);
+        });
+
+        calcularResumen();
+        document.querySelector('.btn-vaciar').disabled = cart.length === 0;
       }
-    
+
+      function calcularResumen() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let subtotal = 0;
+
+        document.querySelectorAll('.product-checkbox').forEach(checkbox => {
+          if (checkbox.checked) {
+            const index = parseInt(checkbox.dataset.index);
+            const product = cart[index];
+            subtotal += product.price * product.quantity;
+          }
+        });
+
+        const taxes = subtotal * 0.10;
+        const shipping = subtotal > 100000 ? 0 : 10000;
+        const grandTotal = subtotal + taxes + shipping;
+
+        document.getElementById('resumen-subtotal').innerText = `Subtotal: $${subtotal.toLocaleString()}`;
+        document.getElementById('resumen-taxes').innerText = `Impuestos (10%): $${taxes.toLocaleString()}`;
+        document.getElementById('resumen-shipping').innerText = `Envío: $${shipping.toLocaleString()}`;
+        document.getElementById('resumen-total').innerText = `Total: $${grandTotal.toLocaleString()}`;
+        // Al final de calcularResumen()
+const comprarBtn = document.querySelector('.btn-comprar');
+comprarBtn.disabled = subtotal === 0;
+
+      }
+
       function removeProduct(event) {
-  const index = parseInt(event.target.dataset.index); 
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-  if (index >= 0 && index < cart.length) { 
-    const removedProduct = cart[index]; 
-    cart.splice(index, 1); 
-    localStorage.setItem('cart', JSON.stringify(cart)); 
-    displayCart();
-    
-    showConfirmationMessage(`El producto "${removedProduct.title}" ha sido eliminado del carrito.`);
-  } else {
-    console.error("Índice inválido para eliminar un producto.");
-  }
-}
-  function showConfirmationMessage(message) {
-  const confirmationDiv = document.createElement("div");
-  confirmationDiv.textContent = message;
-  confirmationDiv.className = "confirmation-message";
+        const index = parseInt(event.target.dataset.index);
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  document.body.appendChild(confirmationDiv);
+        if (index >= 0 && index < cart.length) {
+          const removedProduct = cart[index];
+          cart.splice(index, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+          displayCart();
+          showConfirmationMessage(`El producto "${removedProduct.title}" ha sido eliminado del carrito.`);
+        } else {
+          console.error("Índice inválido para eliminar un producto.");
+        }
+      }
 
-  setTimeout(() => {
-    confirmationDiv.remove();
-  }, 3000);
-}
+      function showConfirmationMessage(message) {
+        const confirmationDiv = document.createElement("div");
+        confirmationDiv.textContent = message;
+        confirmationDiv.className = "confirmation-message";
+        document.body.appendChild(confirmationDiv);
+        setTimeout(() => {
+          confirmationDiv.remove();
+        }, 3000);
+      }
 
+      function updateQuantity(index, newQuantity) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (newQuantity < 1) newQuantity = 1;
+        cart[index].quantity = parseInt(newQuantity);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        displayCart();
+        setTimeout(calcularResumen, 10);
+      }
 
-function updateQuantity(index, newQuantity) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.addEventListener('DOMContentLoaded', () => {
+        const vaciarBtn = document.querySelector('.btn-vaciar');
+        vaciarBtn.addEventListener('click', () => {
+          localStorage.removeItem('cart');
+          displayCart();
+          showConfirmationMessage("El carrito ha sido vaciado.");
+        });
 
-  // Se asegura de que la cantidad no sea menor que 1
-  if (newQuantity < 1) {
-    newQuantity = 1;
-  }
-
-  cart[index].quantity = parseInt(newQuantity);
-  localStorage.setItem('cart', JSON.stringify(cart));
-
-  displayCart(); // Asegúrate de que se vuelva a renderizar el carrito
-}
-
-
-      window.onload = displayCart;
+        displayCart();
+      });
     </script>
   </body>
 </html>

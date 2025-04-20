@@ -1,28 +1,25 @@
+/* -------------------------------------- */
 /* Estilos generales */
+/* -------------------------------------- */
 body {
   font-family: cursive, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #000000;
-  /* Lila claro */
   color: #ffffff;
-  /* Negro */
 }
 
 h2 {
   font-size: 2rem;
   color: #e1d0ff;
-  margin-bottom: 1rem;
   text-align: center;
-  /* Centra el texto */
   font-weight: bold;
-  /* Pone el texto en negrita */
   margin-bottom: 20px;
-  /* Añade espacio debajo del título */
 }
 
-/* Estilo del enlace como botón circular */
-
+/* -------------------------------------- */
+/* Botón circular */
+/* -------------------------------------- */
 .circular-button {
   display: inline-flex;
   justify-content: center;
@@ -33,9 +30,7 @@ h2 {
   overflow: hidden;
   text-decoration: none;
   background-color: #f4f4f4;
-  /* Fondo del botón */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  /* Sombra para efecto 3D */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -43,17 +38,16 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ajusta la imagen dentro del círculo */
 }
 
 .circular-button:hover {
   transform: scale(1.1);
-  /* Efecto de hover */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-  /* Sombra más pronunciada en hover */
 }
 
-/* Encabezado */
+/* -------------------------------------- */
+/* Encabezado - Header y navegación */
+/* -------------------------------------- */
 .header {
   display: flex;
   justify-content: space-between;
@@ -66,7 +60,6 @@ h2 {
 .logo {
   font-size: 1.8rem;
   color: #c3a6ff;
-  /* Lila claro */
 }
 
 .nav ul {
@@ -78,16 +71,16 @@ h2 {
 .nav a {
   text-decoration: none;
   color: #f4eafa;
-  /* Lila claro */
   font-weight: bold;
 }
 
 .nav a:hover {
   color: #c3a6ff;
-  /* Lila brillante */
 }
 
-/* Botón de carrito */
+/* -------------------------------------- */
+/* Botón de carrito y login */
+/* -------------------------------------- */
 .cart-button {
   display: flex;
   align-items: center;
@@ -108,14 +101,15 @@ h2 {
   font-size: 16px;
 }
 
-/* Alinear carrito y login */
 .actions {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-
+/* -------------------------------------- */
+/* Barra de búsqueda */
+/* -------------------------------------- */
 .search-bar {
   display: flex;
   align-items: center;
@@ -128,7 +122,7 @@ h2 {
   border: 1px solid #c3a6ff;
   border-radius: 20px;
   outline: none;
-  font-size: 1.0rem;
+  font-size: 1rem;
   background-color: #f4eafa;
   color: #ffffff;
 }
@@ -146,12 +140,14 @@ h2 {
   background-color: #b08ce6;
 }
 
+/* -------------------------------------- */
+/* Mensaje de confirmación */
+/* -------------------------------------- */
 .confirmation-message {
   position: fixed;
   top: 20px;
   right: 20px;
   background-color: #f44336;
-  /* Rojo para eliminación */
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -160,8 +156,12 @@ h2 {
   z-index: 1000;
 }
 
-/* Estilo para el carrito */
+/* -------------------------------------- */
+/* Sección Carrito */
+/* -------------------------------------- */
 .carrito {
+  position: relative;
+  min-height: 100vh;
   padding: 20px;
   background-color: #141313;
   border-radius: 8px;
@@ -169,16 +169,14 @@ h2 {
 
 .cart-items {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* 4 productos por fila */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  /* Espaciado reducido */
+  padding-right: 290px;
 }
 
 .cart-item {
   background-color: #000000;
   padding: 0.8rem;
-  /* Menos padding para que sea más compacto */
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -219,38 +217,24 @@ h2 {
 }
 
 .cart-item .btn-remove {
-  background-color: #ff4d4d;
-  color: rgb(0, 0, 0);
+  background-color: #a855f7;
+  color: white;
   padding: 5px 10px;
   border: none;
-  border-radius: 4px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s;
+  margin: auto;
 }
 
 .cart-item .btn-remove:hover {
-  background-color: #e60000;
+  background-color: #9333ea;
 }
-
-.cart-summary {
-  background-color: #000000;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.cart-summary p {
-  margin: 5px 0;
-  font-size: 16px;
-  font-weight: bold;
-}
-
 
 .cart-item-actions {
   display: flex;
   gap: 10px;
-  /* Espacio entre los botones */
   margin-top: 10px;
 }
 
@@ -260,16 +244,6 @@ h2 {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
-}
-
-.cart-item-actions .btn-remove {
-  background-color: #ff4d4d;
-  /* Rojo para eliminar */
-  color: #fff;
-}
-
-.cart-item-actions .btn-remove:hover {
-  background-color: #ff1a1a;
 }
 
 .cart-item-actions .btn-summary {
@@ -288,12 +262,169 @@ h2 {
   border-radius: 5px;
 }
 
+/* -------------------------------------- */
+/* Aside Carrito (Resumen) */
+/* -------------------------------------- */
+.carrito-aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 225px;
+  height: 93%;
+  background-color: #000000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.carrito-aside h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #e1d0ff;
+}
+
+.carrito-aside .btn-total,
+.carrito-aside .btn-vaciar {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+}
+
+.carrito-aside .btn-total {
+  background-color: #6b52a3;
+}
+
+.carrito-aside .btn-vaciar {
+  background-color: #a855f7;
+  margin: auto;
+}
+
+/* -------------------------------------- */
+/* Resumen del pedido */
+/* -------------------------------------- */
+#cart-summary {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+#cart-summary p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+#cart-summary strong {
+  font-size: 1.3rem;
+  color: #ff6f61;
+}
+
+/* -------------------------------------- */
+/* Botones de acción del carrito */
+/* -------------------------------------- */
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.cart-actions .btn {
+  flex: 1;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-actions .btn:hover {
+  background-color: #a855f7;
+}
+
+.cart-actions .checkout {
+  background-color: #4caf50;
+}
+
+.cart-actions .checkout:hover {
+  background-color: #45a049;
+}
+
+/* -------------------------------------- */
+/* Checkbox personalizado */
+/* -------------------------------------- */
+input[type="checkbox"].product-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #a855f7;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 10px;
+  position: relative;
+}
+
+input[type="checkbox"].product-checkbox:checked {
+  background-color: #a855f7;
+}
+
+input[type="checkbox"].product-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 3.5px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* -------------------------------------- */
+/* Botón Comprar */
+/* -------------------------------------- */
+.btn-comprar {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #a855f7;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-comprar:disabled {
+  background-color: #d8b4fe;
+  cursor: not-allowed;
+}
+
+.btn-comprar:hover:enabled {
+  background-color: #9333ea;
+}
+
+/* -------------------------------------- */
+/* Sección Productos Nuevos */
+/* -------------------------------------- */
 .productos-nuevos {
   padding: 3rem 1rem;
   background-color: #1a1a1a;
-  /* Fondo negro */
   color: #d6c9f3;
-  /* Texto en lila */
   text-align: center;
 }
 
@@ -359,27 +490,25 @@ h2 {
   background-color: #836bc2;
 }
 
-/* Sección de contacto */
+/* -------------------------------------- */
+/* Sección Contacto */
+/* -------------------------------------- */
 .contacto {
   padding: 3rem 1rem;
   background-color: #000000;
-  /* Fondo negro */
   color: #d6c9f3;
-  /* Texto en lila */
   text-align: center;
 }
 
 .contacto h2 {
   font-size: 2rem;
   color: #e1d0ff;
-  /* Título en lila claro */
   margin-bottom: 1rem;
 }
 
 .contacto p {
   font-size: 1.1rem;
   color: #c5a3ff;
-  /* Descripción en morado lila */
   margin-bottom: 2rem;
 }
 
@@ -396,18 +525,14 @@ h2 {
   font-size: 1rem;
   padding: 0.75rem;
   border: 2px solid #6b52a3;
-  /* Borde morado lila */
   border-radius: 5px;
   background-color: #000000;
-  /* Fondo morado oscuro */
   color: #fff;
 }
 
 .contact-form button {
   background-color: #6b52a3;
-  /* Fondo morado lila */
   color: #fff;
-  /* Texto blanco */
   padding: 0.75rem;
   border: none;
   border-radius: 5px;
@@ -419,20 +544,19 @@ h2 {
 
 .contact-form button:hover {
   background-color: #836bc2;
-  /* Hover en morado más claro */
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
   outline: none;
   border-color: #836bc2;
-  /* Borde morado más claro al enfocar */
 }
 
-/* Estilo del botón de inicio de sesión */
+/* -------------------------------------- */
+/* Estilo botón de inicio de sesión */
+/* -------------------------------------- */
 .login .btn {
   background-color: #000000;
-  /* Fondo morado lila */
   color: #fff;
   padding: 0.7rem 1rem;
   border-radius: 5px;
@@ -443,61 +567,14 @@ h2 {
 
 .login .btn:hover {
   background-color: #836bc2;
-  /* Hover en morado más claro */
 }
 
-
-/* Resumen del pedido */
-#cart-summary {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-}
-
-#cart-summary p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-#cart-summary strong {
-  font-size: 1.3rem;
-  color: #ff6f61;
-}
-
-/* Botones de acción del carrito */
-.cart-actions {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-}
-
-.cart-actions .btn {
-  flex: 1;
-  margin: 0 0.5rem;
-  padding: 1rem;
-  font-size: 1rem;
+/* -------------------------------------- */
+/* Footer */
+/* -------------------------------------- */
+footer {
+  background-color: #000000;
+  color: #D1B2FF;
+  padding: 20px;
   text-align: center;
-  background-color: #ff6f61;
-  color: rgb(0, 0, 0);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
-
-.cart-actions .btn:hover {
-  background-color: #e65550;
-}
-
-.cart-actions .checkout {
-  background-color: #4caf50;
-}
-
-.cart-actions .checkout:hover {
-  background-color: #45a049;
-}
-
-
-

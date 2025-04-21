@@ -5,24 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sanrio Star ✩</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/productos.css" />
   </head>
   <body>
     <header class="header">
       <a href="index.html" class="circular-button">
-        <img src="img/logo.PNG" alt="Botón circular">
-    </a>
-      <form class="search-bar" action="#" method="GET">
-        <input type="text" name="q" placeholder="Buscar productos..." />
-  <button type="submit">🔍</button>
-      </nav> 
+        <img src="img/logo.PNG" alt="Logo">
+      </a>
+    
       <div class="actions">
-        <a href="carrito.html" class="cart-button">
-            <i class="shopping cart icon"></i> Carrito 🛒</a>
-            <a href="productos.html" class="cart-button">Productos</a>
-      <div class="login">
+        <a href="carrito.html" class="cart-button"> Carrito 🛒</a>
+        <div class="login">
+      <button class="glossy-button">
         <a href="inicosesion.html" class="btn">Iniciar sesión</a>
-      </div> </form>
+      </button>
+        </div>
+      </div>
+
     </header>
 
 <section id="productos-nuevos" class="productos-nuevos">
@@ -84,7 +83,7 @@
       <button class="btn" onclick="addToCart({ 
         id: 4, 
         title: 'Porta carnet de Pochaco', 
-        price: 18000, 
+        price: 18.000, 
         image: 'img/pochaco.jfif',
         description: 'Porta carnet de Pochaco.',
       })">Agregar al carrito</button>

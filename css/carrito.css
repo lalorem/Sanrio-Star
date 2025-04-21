@@ -1,8 +1,9 @@
 /* -------------------------------------- */
 /* Estilos generales */
 /* -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&display=swap');
 body {
-  font-family: cursive, sans-serif;
+  font-family: 'Fredoka';
   margin: 0;
   padding: 0;
   background-color: #000000;
@@ -53,30 +54,60 @@ h2 {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #000000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #000; /* Fondo oscuro */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  flex-wrap: wrap; /* Para que no se rompa en pantallas pequeñas */
 }
 
 .logo {
-  font-size: 1.8rem;
-  color: #c3a6ff;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #c3a6ff; 
 }
 
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.8rem;
+  font-family: 'Fredoka';
 }
 
 .nav a {
   text-decoration: none;
-  color: #f4eafa;
-  font-weight: bold;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  font-family: 'Fredoka';
 }
 
 .nav a:hover {
-  color: #c3a6ff;
+  color: #c3a6ff; 
 }
+
+.actions {
+  font-family: 'Fredoka';
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap; /* En caso de espacio reducido */
+  margin-right: 500px;
+}
+
+.login .btn {
+  background-color: transparent;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 1;
+  font-family: 'Fredoka';
+}
+
 
 /* -------------------------------------- */
 /* Botón de carrito y login */
@@ -90,6 +121,7 @@ h2 {
   color: white;
   text-decoration: none;
   border-radius: 4px;
+  border-radius: 25px; 
   font-size: 18px;
 }
 
@@ -101,43 +133,54 @@ h2 {
   font-size: 16px;
 }
 
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* -------------------------------------- */
-/* Barra de búsqueda */
-/* -------------------------------------- */
-.search-bar {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  gap: 0.5rem;
-}
-
-.search-bar input {
-  padding: 0.5rem;
-  border: 1px solid #c3a6ff;
-  border-radius: 20px;
-  outline: none;
-  font-size: 1rem;
-  background-color: #f4eafa;
-  color: #ffffff;
-}
-
-.search-bar button {
-  background-color: #c3a6ff;
+.glossy-button {
+  background-color: #6b52a3;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 10px 0px;
+  border-radius: 25px;
   border: none;
-  border-radius: 50%;
-  padding: 0.5rem;
   cursor: pointer;
-  color: #000000;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 0;
 }
 
-.search-bar button:hover {
-  background-color: #b08ce6;
+/* Brillo con forma de onda curva */
+.glossy-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  animation: curve-shine 2.5s infinite linear;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+/* Movimiento suave de la curva */
+@keyframes curve-shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.glossy-button:hover {
+  background-color: #836bc2;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* -------------------------------------- */
@@ -209,11 +252,15 @@ h2 {
 
 .cart-item input {
   padding: 5px;
-  border-radius: 4px;
+  border-radius: 25px;
   border: 1px solid #ccc;
   width: 40px;
   font-size: 0.9rem;
   margin: 0.5rem 0;
+  background-color: #464646;
+  border: none;
+  color: white;
+  text-align: center;
 }
 
 .cart-item .btn-remove {
@@ -550,23 +597,6 @@ input[type="checkbox"].product-checkbox:checked::after {
 .contact-form textarea:focus {
   outline: none;
   border-color: #836bc2;
-}
-
-/* -------------------------------------- */
-/* Estilo botón de inicio de sesión */
-/* -------------------------------------- */
-.login .btn {
-  background-color: #000000;
-  color: #fff;
-  padding: 0.7rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-}
-
-.login .btn:hover {
-  background-color: #836bc2;
 }
 
 /* -------------------------------------- */

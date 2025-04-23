@@ -22,8 +22,8 @@ body {
 header {
     background-image: url('../img/gifcat.webp'); /* Cambia a una imagen de Chococat */
     background-size: cover;
-    background-position: center;
-    color: #FFD700; /* Amarillo vibrante */
+    background-position: center 90%;
+    color: #FFD700; 
     padding: 270px;
     text-align: left;
     position: relative;

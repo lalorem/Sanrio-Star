@@ -16,9 +16,8 @@ body {
   100% { transform: translateY(0); }
 }
 
-/* ==========================================
-   BOTONES GENERALES
-========================================== */
+/* BOTONES GENERALES */
+
 .btn {
   background-color: #6b52a3; /* Morado suave */
   color: #fff;
@@ -37,6 +36,7 @@ body {
 }
 
 /* Botón específico para login */
+
 .login .btn {
   background-color: transparent;
   color: #fff;
@@ -49,7 +49,6 @@ body {
   z-index: 1;
   font-family: 'Fredoka';
 }
-
 
 /* BOTÓN CIRCULAR */
 .circular-button {
@@ -78,9 +77,8 @@ body {
   transition: transform 0.8s ease-in-out; /* Suaviza el giro */
 }
 
-/* ==========================================
-   HEADER / NAVEGACIÓN
-========================================== */
+/* HEADER / NAVEGACIÓN */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -89,7 +87,7 @@ body {
   background-color: #000; /* Fondo oscuro */
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra */
   flex-wrap: wrap; /* Para que no se rompa en pantallas pequeñas */
 }
 
@@ -121,13 +119,12 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex-wrap: wrap; /* En caso de espacio reducido */
+  flex-wrap: wrap; /* por si el espacio esta redusido */
   margin-right: 400px;
 }
 
-/* ==========================================
-   CARRITO
-========================================== */
+/* CARRITO */
+
 .cart-button {
   display: flex;
   align-items: center;
@@ -212,7 +209,7 @@ body {
 }
 
 /* ==========================================
-   SECCIÓN DESTACADOS / TARJETAS DE PRODUCTOS
+   SECCIÓN DESTACADOS 
 ========================================== */
 
 .destacados {
@@ -417,6 +414,7 @@ body {
   border-color: #836bc2;
 }
 
+/*efecto del boton iniciar sesion*/
 
 .glossy-button {
   background-color: #6b52a3;
@@ -469,12 +467,7 @@ body {
 }
 
 
-
-/* ==========================================
-   MEDIA QUERIES RESPONSIVE
-========================================== */
-
-/* Dispositivos medianos (tablets en orientación vertical) */
+/* responsy */
 @media (max-width: 990px) {
   .header {
     flex-direction: column;
